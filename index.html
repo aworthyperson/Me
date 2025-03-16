@@ -11,6 +11,96 @@
 		<meta name="keywords" content="civil engineering, data science, sustainability, building energy, urban climate, University of Washington" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Modal Styles */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1000;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0,0,0,0.8);
+				animation: fadeIn 0.3s;
+			}
+
+			@keyframes fadeIn {
+				from {opacity: 0}
+				to {opacity: 1}
+			}
+
+			.modal-content {
+				position: relative;
+				background-color: #fefefe;
+				margin: 2% auto;
+				padding: 0;
+				width: 90%;
+				max-width: 1000px;
+				height: 90%;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+				border-radius: 5px;
+				overflow: hidden;
+			}
+
+			.close-modal {
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				color: #f1f1f1;
+				font-size: 28px;
+				font-weight: bold;
+				z-index: 1001;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			.close-modal:hover,
+			.close-modal:focus {
+				color: #bbb;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.pdf-container {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.pdf-container iframe {
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+
+			.modal-controls {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: rgba(0,0,0,0.7);
+				padding: 10px;
+				text-align: center;
+				z-index: 1001;
+			}
+
+			.modal-controls a {
+				display: inline-block;
+				margin: 0 10px;
+				color: white;
+				text-decoration: none;
+				padding: 5px 10px;
+				border-radius: 4px;
+				background-color: rgba(255,255,255,0.2);
+				transition: background-color 0.3s;
+			}
+
+			.modal-controls a:hover {
+				background-color: rgba(255,255,255,0.3);
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -48,7 +138,7 @@
 						<p>I am always looking for new collaborators. Please feel free to reach out by email or over LinkedIn!</p>
 				
 						<ul class="actions">
-							<li><a href="Academic_CV_AW.pdf" target="_blank" class="button">View CV</a></li>
+							<li><a href="#" class="button" id="open-cv-modal">View CV</a></li>
 							<li><a href="#contact" class="button primary smooth-scroll-middle">Contact Me</a></li>
 						</ul>
 					</div>
@@ -97,6 +187,20 @@
 
 			</div>
 
+		<!-- CV Modal -->
+		<div id="cv-modal" class="modal">
+			<span class="close-modal">&times;</span>
+			<div class="modal-content">
+				<div class="pdf-container">
+					<iframe src="Academic_CV_AW.pdf" title="Amanda Worthy's CV"></iframe>
+				</div>
+				<div class="modal-controls">
+					<a href="Academic_CV_AW.pdf" download>Download PDF</a>
+					<a href="Academic_CV_AW.pdf" target="_blank">Open in New Tab</a>
+				</div>
+			</div>
+		</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -105,6 +209,46 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Modal Script -->
+			<script>
+				// Get the modal
+				var modal = document.getElementById("cv-modal");
+				
+				// Get the button that opens the modal
+				var btn = document.getElementById("open-cv-modal");
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close-modal")[0];
+				
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					modal.style.display = "block";
+					document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+				}
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+					modal.style.display = "none";
+					document.body.style.overflow = "auto"; // Restore scrolling
+				}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+						document.body.style.overflow = "auto"; // Restore scrolling
+					}
+				}
+				
+				// Close modal with Escape key
+				document.addEventListener('keydown', function(event) {
+					if (event.key === "Escape" && modal.style.display === "block") {
+						modal.style.display = "none";
+						document.body.style.overflow = "auto"; // Restore scrolling
+					}
+				});
+			</script>
 
 	</body>
 </html>
