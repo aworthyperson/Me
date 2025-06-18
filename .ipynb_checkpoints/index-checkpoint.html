@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<!--
+	Amanda Worthy's Personal website (in progress) 
+-->
+<html>
+	<head>
+		<title>Amanda Worthy's Personal Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Amanda Worthy - Civil Engineering PhD Student at University of Washington, focusing on sustainable building design and urban energy modeling." />
+		<meta name="keywords" content="civil engineering, data science, sustainability, building energy, urban climate, University of Washington" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Modal Styles */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1000;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0,0,0,0.8);
+				animation: fadeIn 0.3s;
+			}
+
+			@keyframes fadeIn {
+				from {opacity: 0}
+				to {opacity: 1}
+			}
+
+			.modal-content {
+				position: relative;
+				background-color: #fefefe;
+				margin: 2% auto;
+				padding: 0;
+				width: 90%;
+				max-width: 1000px;
+				height: 90%;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+				border-radius: 5px;
+				overflow: hidden;
+			}
+
+			.close-modal {
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				color: #f1f1f1;
+				font-size: 28px;
+				font-weight: bold;
+				z-index: 1001;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			.close-modal:hover,
+			.close-modal:focus {
+				color: #bbb;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.pdf-container {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.pdf-container iframe {
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+
+			.modal-controls {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: rgba(0,0,0,0.7);
+				padding: 10px;
+				text-align: center;
+				z-index: 1001;
+			}
+
+			.modal-controls a {
+				display: inline-block;
+				margin: 0 10px;
+				color: white;
+				text-decoration: none;
+				padding: 5px 10px;
+				border-radius: 4px;
+				background-color: rgba(255,255,255,0.2);
+				transition: background-color 0.3s;
+			}
+
+			.modal-controls a:hover {
+				background-color: rgba(255,255,255,0.3);
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- Header/Banner Section -->
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+					<div class="content">
+						<h1>Amanda Worthy</h1>
+						<p class="major">PhD Candidate | Civil Engineering | Data Science</p>
+						<p>University of Washington, Seattle</p>
+						<ul class="actions stacked">
+							<li><a href="#first" class="button big wide smooth-scroll-middle">Learn More</a></li>
+						</ul>
+					</div>
+					<div class="image">
+						<img src="images/me_it.jpeg" alt="Amanda Worthy" />
+					</div>
+				</section>
+
+				<!-- About Section -->
+				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+					<div class="content">
+						<h2>About Me</h2>
+						<p>Hi there! I am a 4th-year Civil Engineering (data science option) PhD student at the University of Washington. 
+							I spend the majority of my working time as energy infrastructure researcher, educator, and data scientist. 
+							I am particularly interested in making the built environment more sustainable through data-driven, performance-based analysis.</p>
+							
+						<p>My current research assesses the impact of urban climates and microclimates on building energy performance, ultimately  
+							aiming to make urban scale building energy models more accurate and reliable.</p>
+						
+						<p>I hold an M.S. degree in Civil Engineering from the University of Washington, Seattle (2021) and B.S in Environmental Engineering from the University of Colorado, Boulder (2020).</p>
+						
+						<p>I am always looking for new collaborators. Please feel free to reach out by email or over LinkedIn!</p>
+				
+						<ul class="actions">
+							<li><a href="#" class="button" id="open-cv-modal">View CV</a></li>
+							<li><a href="#contact" class="button primary smooth-scroll-middle">Contact Me</a></li>
+						</ul>
+					</div>
+					<div class="image">
+						<img src="images/ski_1.jpeg" alt="Amanda skiing" />
+					</div>
+				</section>
+
+				<!-- Contact Section -->
+				<section class="wrapper style1 align-center" id="contact">
+					<div class="inner">
+						<h2>Get In Touch</h2>
+						<p>Interested in collaboration or have questions about my research? Feel free to reach out!</p>
+						<div class="items style1 medium">
+							<div class="item">
+								<span class="icon solid style2 major fa-university"></span>
+								<h3>Academic</h3>
+								<p>University of Washington<br>Department of Civil Engineering</p>
+							</div>
+							<div class="item">
+								<span class="icon solid style2 major fa-envelope"></span>
+								<h3>Email</h3>
+								<p><a href="mailto:aworthy@uw.edu">aworthy@uw.edu</a></p>
+							</div>
+							<div class="item">
+								<span class="icon brands style2 major fa-linkedin-in"></span>
+								<h3>LinkedIn</h3>
+								<p><a href="https://www.linkedin.com/in/amandaworthy/">Connect with me</a></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer class="wrapper style1 align-center">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/amandaworthy/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/aworthyperson" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:aworthy@uw.edu" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+						<p>Site designed by Amanda Worthy in 2024</p>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- CV Modal -->
+		<div id="cv-modal" class="modal">
+			<span class="close-modal">&times;</span>
+			<div class="modal-content">
+				<div class="pdf-container">
+					<iframe src="Academic_CV_AW.pdf" title="Amanda Worthy's CV"></iframe>
+				</div>
+				<div class="modal-controls">
+					<a href="Academic_CV_AW.pdf" download>Download PDF</a>
+					<a href="Academic_CV_AW.pdf" target="_blank">Open in New Tab</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- Modal Script -->
+			<script>
+				// Get the modal
+				var modal = document.getElementById("cv-modal");
+				
+				// Get the button that opens the modal
+				var btn = document.getElementById("open-cv-modal");
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close-modal")[0];
+				
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					modal.style.display = "block";
+					document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+				}
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+					modal.style.display = "none";
+					document.body.style.overflow = "auto"; // Restore scrolling
+				}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+						document.body.style.overflow = "auto"; // Restore scrolling
+					}
+				}
+				
+				// Close modal with Escape key
+				document.addEventListener('keydown', function(event) {
+					if (event.key === "Escape" && modal.style.display === "block") {
+						modal.style.display = "none";
+						document.body.style.overflow = "auto"; // Restore scrolling
+					}
+				});
+			</script>
+
+	</body>
+</html>
